@@ -9,14 +9,6 @@
 
 </div>
 
-## Attribution
-
-This project is a fork of [gemini-mcp-tool](https://github.com/jamubc/gemini-mcp-tool) by jamubc. The original project provided the foundation for integrating Google's Gemini CLI with the Model Context Protocol. This fork maintains the core functionality while diverging in direction and implementation to explore new capabilities and use cases.
-
-This is a simple Model Context Protocol (MCP) server that allows AI assistants to interact with the [Gemini CLI](https://github.com/google-gemini/gemini-cli). It enables the AI to leverage the power of Gemini's massive token window for large analysis, especially with large files and codebases using the `@` syntax for direction.
-
-- Ask gemini natural questions, through claude or Brainstorm new ideas in a party of 3!
-
 ## TLDR: [![Claude](https://img.shields.io/badge/Claude-D97757?logo=claude&logoColor=fff)](#) + [![Google Gemini](https://img.shields.io/badge/Google%20Gemini-886FBF?logo=googlegemini&logoColor=fff)](#)
 
 **Goal**: Supercharge Claude Code with Gemini's 2M+ token context and built-in tools for:
@@ -291,6 +283,14 @@ The most flexible tool - automatically uses Gemini's built-in tools (`web_search
 2. Claude: "Verify if server actions are used in @app/"
 3. Claude: "Analyze @app/ and suggest where to add server actions"
 ```
+
+## Attribution
+
+This project is a fork of [gemini-mcp-tool](https://github.com/jamubc/gemini-mcp-tool) by jamubc. The original project provided the foundation for integrating Google's Gemini CLI with the Model Context Protocol. This fork maintains the core functionality while diverging in direction and implementation to explore new capabilities and use cases.
+
+This is a simple Model Context Protocol (MCP) server that allows AI assistants to interact with the [Gemini CLI](https://github.com/google-gemini/gemini-cli). It enables the AI to leverage the power of Gemini's massive token window for large analysis, especially with large files and codebases using the `@` syntax for direction.
+
+- Ask gemini natural questions, through claude or Brainstorm new ideas in a party of 3!
 
 ## Contributing
 
