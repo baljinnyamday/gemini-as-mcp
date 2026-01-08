@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## [1.0.2] - 2026-01-08
+- Fixed: Escaped `@syntax` in README to prevent GitHub user mention
+
 ## [1.1.3]
 - "gemini reads, claude edits"
 - Added `changeMode` parameter to ask-gemini tool for structured edit responses using claude edit diff.
