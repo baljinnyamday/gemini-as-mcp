@@ -237,7 +237,7 @@ The most flexible tool - automatically uses Gemini's built-in tools (`web_search
 ```
 
 **Parameters:**
-- `prompt` (required): Your request (supports @syntax, URLs, search queries)
+- `prompt` (required): Your request (supports `@syntax`, URLs, search queries)
 - `model` (optional): Model to use (default: `gemini-3-flash-preview`)
 - `sandbox` (optional): Run in sandbox mode (default: false)
 - `changeMode` (optional): Return structured edits (default: false)
