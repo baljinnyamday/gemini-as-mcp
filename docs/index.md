@@ -11,7 +11,7 @@ hero:
       link: /getting-started
     - theme: alt
       text: Leave a Star ⭐
-      link: https://github.com/jamubc/gemini-mcp-tool
+      link: https://github.com/baljinnyamday/gemini-as-mcp
 
 features:
   - icon: 📂
@@ -31,7 +31,7 @@ features:
       <span style="color: #3b82f6;">Built on MCP protocol.</span><br><span style="color: #ef4444;">Tested with MCP standard.</span><br><span style="color: #22c55e;"><em>Benchmarked</em> with <span style="color: #f97316;">Claude Code</span>.</span>
   - icon: 🔐
     title: No keys!
-    details: Gemini-mcp-tool does not require any extra keys.
+    details: gemini-as-mcp does not require any extra keys.
   - icon: 🚦
     title: Model Selection
     details: Choose from Gemini-2.5-Pro and Gemini-2.5-Flash, using natural language.
@@ -53,6 +53,6 @@ features:
 ## Quick Start
 </div>
 
-For installation and setup instructions, please refer to our [GitHub repository](https://github.com/jamubc/gemini-mcp-tool#readme) which contains the most up-to-date installation guide.
+For installation and setup instructions, please refer to our [GitHub repository](https://github.com/baljinnyamday/gemini-as-mcp#readme) which contains the most up-to-date installation guide.
 
 

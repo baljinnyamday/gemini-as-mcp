@@ -6,7 +6,7 @@ import { ERROR_MESSAGES, STATUS_MESSAGES } from '../constants.js';
 // Web Search Tool - Leverages Gemini's google_web_search
 const webSearchArgsSchema = z.object({
   query: z.string().min(1).describe("Search query. Gemini will use google_web_search tool to find current information and return a processed summary with citations."),
-  model: z.string().optional().describe("Optional model to use (default: gemini-2.5-pro)"),
+  model: z.string().optional().describe("Optional model to use (default: gemini-3-flash-preview)"),
 });
 
 export const webSearchTool: UnifiedTool = {
@@ -45,7 +45,7 @@ Please use the google_web_search tool to find the most current and relevant info
 const webFetchArgsSchema = z.object({
   urls: z.union([z.string(), z.array(z.string())]).describe("One or more URLs to fetch and analyze (http:// or https://). Can be a single URL string or array of URLs."),
   instruction: z.string().describe("What to do with the fetched content (e.g., 'summarize key points', 'compare these APIs', 'extract code examples')"),
-  model: z.string().optional().describe("Optional model to use (default: gemini-2.5-pro)"),
+  model: z.string().optional().describe("Optional model to use (default: gemini-3-flash-preview)"),
 });
 
 export const webFetchTool: UnifiedTool = {

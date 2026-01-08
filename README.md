@@ -29,12 +29,12 @@ Before using this tool, ensure you have:
 ### One-Line Setup
 
 ```bash
-claude mcp add gemini-cli -- npx -y gemini-as-mcp
+claude mcp add gemini-as-mcp -- npx -y gemini-as-mcp
 ```
 
 ### Verify Installation
 
-Type `/mcp` inside Claude Code to verify the gemini-cli MCP is active.
+Type `/mcp` inside Claude Code to verify the gemini-as-mcp MCP is active.
 
 ---
 
@@ -44,7 +44,7 @@ If you already have it configured in Claude Desktop:
 
 1. Add to your Claude Desktop config:
 ```json
-"gemini-cli": {
+"gemini-as-mcp": {
   "command": "npx",
   "args": ["-y", "gemini-as-mcp"]
 }
@@ -66,7 +66,7 @@ Add this configuration to your Claude Desktop config file:
 ```json
 {
   "mcpServers": {
-    "gemini-cli": {
+    "gemini-as-mcp": {
       "command": "npx",
       "args": ["-y", "gemini-as-mcp"]
     }
@@ -81,7 +81,7 @@ If you installed globally, use this configuration instead:
 ```json
 {
   "mcpServers": {
-    "gemini-cli": {
+    "gemini-as-mcp": {
       "command": "gemini-as-mcp"
     }
   }
@@ -96,6 +96,20 @@ If you installed globally, use this configuration instead:
   - **Linux**: `~/.config/claude/claude_desktop_config.json`
 
 After updating the configuration, restart your terminal session.
+
+## 🤖 Available Models
+
+This MCP server supports both Gemini 3 (preview) and Gemini 2.5 (stable) models:
+
+### Gemini 3 (Preview - Recommended)
+- **`gemini-3-flash-preview`** (default) - Pro-level intelligence at Flash speed and pricing. Best balance for most use cases.
+- **`gemini-3-pro-preview`** - Most advanced reasoning model for complex problems requiring deep analysis.
+
+### Gemini 2.5 (Stable)
+- **`gemini-2.5-pro`** - Stable production model with strong reasoning capabilities.
+- **`gemini-2.5-flash`** - Faster, more cost-effective model for simpler tasks.
+
+All tools accept an optional `model` parameter to override the default (`gemini-3-flash-preview`).
 
 ## 🚀 Available Tools
 
@@ -120,7 +134,7 @@ Search the web and get AI-processed summaries with citations. Perfect for gettin
 
 **Parameters:**
 - `query` (required): Your search query
-- `model` (optional): Model to use (default: `gemini-2.5-pro`)
+- `model` (optional): Model to use (default: `gemini-3-flash-preview`)
 
 ---
 
@@ -144,7 +158,7 @@ Fetch content from URLs and have Gemini process it according to your instruction
 **Parameters:**
 - `urls` (required): Single URL or array of URLs
 - `instruction` (required): What to do with the content
-- `model` (optional): Model to use (default: `gemini-2.5-pro`)
+- `model` (optional): Model to use (default: `gemini-3-flash-preview`)
 
 ---
 
@@ -168,7 +182,7 @@ Analyze entire codebases using Gemini's 2M+ token context window. Perfect for pr
 **Parameters:**
 - `paths` (required): File/directory paths with `@` syntax
 - `question` (required): What you want to know
-- `model` (optional): Model to use (default: `gemini-2.5-pro`)
+- `model` (optional): Model to use (default: `gemini-3-flash-preview`)
 
 **@ Syntax Examples:**
 - `@src/` - Entire src directory
@@ -200,7 +214,7 @@ Verify if specific features, patterns, or security measures are implemented in y
 - `paths` (required): Directories to search with `@` syntax
 - `feature` (required): Feature/pattern to check for
 - `details` (optional): Specific aspects to verify
-- `model` (optional): Model to use (default: `gemini-2.5-pro`)
+- `model` (optional): Model to use (default: `gemini-3-flash-preview`)
 
 ---
 
@@ -224,7 +238,7 @@ The most flexible tool - automatically uses Gemini's built-in tools (`web_search
 
 **Parameters:**
 - `prompt` (required): Your request (supports @syntax, URLs, search queries)
-- `model` (optional): Model to use (default: `gemini-2.5-pro`)
+- `model` (optional): Model to use (default: `gemini-3-flash-preview`)
 - `sandbox` (optional): Run in sandbox mode (default: false)
 - `changeMode` (optional): Return structured edits (default: false)
 

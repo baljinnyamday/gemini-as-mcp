@@ -22,8 +22,8 @@
       </p>
       
       <div class="hero-actions">
-        <a 
-          href="https://github.com/sponsors/jamubc" 
+        <a
+          href="https://github.com/sponsors/baljinnyamday"
           target="_blank"
           rel="noopener"
           class="action-button action-primary"
@@ -34,8 +34,8 @@
           Sponsor on GitHub
         </a>
 
-        <a 
-          href="https://github.com/jamubc/gemini-mcp-tool" 
+        <a
+          href="https://github.com/baljinnyamday/gemini-as-mcp"
           target="_blank"
           rel="noopener"
           class="action-button action-primary"
@@ -45,9 +45,9 @@
           </svg>
           Star on GitHub
         </a>
-        
-        <a 
-          href="https://ko-fi.com/jamubc" 
+
+        <a
+          href="https://ko-fi.com/baljinnyamday"
           target="_blank"
           rel="noopener"
           class="action-button action-secondary"

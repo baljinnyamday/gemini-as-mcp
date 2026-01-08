@@ -11,11 +11,11 @@
         <div class="support-text">
           <h3 class="support-title">Support Gemini MCP Tool</h3>
           <p class="support-description">
-            Does gemini-mcp-tool help you?<br><br>Your support helps maintain & improve this open source project.
+            Does gemini-as-mcp help you?<br><br>Your support helps maintain & improve this open source project.
           </p>
         </div>
         <a 
-          href="/gemini-mcp-tool/funding" 
+          href="/gemini-as-mcp/funding" 
           class="transparency-link"
           @mouseenter="handleMouseEnter"
           @mousemove="handleMouseMove"
@@ -27,9 +27,9 @@
       </div>
       
       <div class="support-options">
-        <a 
-          href="https://github.com/sponsors/jamubc" 
-          target="_blank" 
+        <a
+          href="https://github.com/sponsors/baljinnyamday"
+          target="_blank"
           rel="noopener"
           class="support-button support-button--primary"
           title="Sponsor on GitHub"
@@ -40,9 +40,9 @@
           <span class="button-text">Sponsor on GitHub</span>
         </a>
 
-        <a 
-          href="https://ko-fi.com/jamubc" 
-          target="_blank" 
+        <a
+          href="https://ko-fi.com/baljinnyamday"
+          target="_blank"
           rel="noopener"
           class="support-button support-button--secondary"
           title="Buy me a coffee"
