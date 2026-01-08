@@ -244,6 +244,17 @@ The most flexible tool - automatically uses Gemini's built-in tools (`web_search
 
 ---
 
+## ⚙️ How It Works
+
+**Auto-Approval Mode**: This MCP server runs Gemini CLI with the `--yolo` flag, which means:
+- ✅ **No confirmation dialogs** - All tool calls are automatically approved
+- ✅ **Faster execution** - No waiting for user input during operations
+- ✅ **Streamlined workflow** - Gemini can use its built-in tools (`google_web_search`, `web_fetch`, file operations) without interruption
+
+This allows Gemini to seamlessly leverage its powerful built-in capabilities while working through Claude Code.
+
+---
+
 ## 💡 Usage Tips
 
 ### When to Use Each Tool

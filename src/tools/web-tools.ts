@@ -24,10 +24,12 @@ export const webSearchTool: UnifiedTool = {
       throw new Error(ERROR_MESSAGES.NO_PROMPT_PROVIDED);
     }
 
-    // Craft prompt that encourages Gemini to use web search
-    const prompt = `Search the web for: ${query}
+    // Craft prompt that explicitly requests web search with clear structure
+    const prompt = `Please use the google_web_search tool to find current information.
 
-Please use the google_web_search tool to find the most current and relevant information. Provide a comprehensive summary with citations.`;
+Query: "${query}"
+
+Provide a comprehensive summary with source citations and relevant details.`;
 
     const result = await executeGeminiCLI(
       prompt,
@@ -81,9 +83,15 @@ export const webFetchTool: UnifiedTool = {
       throw new Error("Maximum 20 URLs allowed per request");
     }
 
-    // Craft prompt that uses web_fetch
-    const urlList = urlArray.join(', ');
-    const prompt = `Please use the web_fetch tool to fetch and analyze the following URL${urlArray.length > 1 ? 's' : ''}: ${urlList}
+    // Craft prompt with clearly formatted URLs
+    // Use XML-style tags to make URLs unambiguous for Gemini
+    const formattedUrls = urlArray
+      .map((url, idx) => `${idx + 1}. <url>${url}</url>`)
+      .join('\n');
+
+    const prompt = `Please use the web_fetch tool to fetch and analyze the following URL${urlArray.length > 1 ? 's' : ''}:
+
+${formattedUrls}
 
 Task: ${instruction}
 
