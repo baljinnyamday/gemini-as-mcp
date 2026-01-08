@@ -5,16 +5,16 @@ export const LOG_PREFIX = "[GMCPT]";
 
 // Error messages
 export const ERROR_MESSAGES = {
-  QUOTA_EXCEEDED: "Quota exceeded for quota metric 'Gemini 2.5 Pro Requests'",
-  QUOTA_EXCEEDED_SHORT: "⚠️ Gemini 2.5 Pro daily quota exceeded. Please retry with model: 'gemini-2.5-flash'",
+  QUOTA_EXCEEDED: "Quota exceeded for quota metric",
+  QUOTA_EXCEEDED_SHORT: "⚠️ Model quota exceeded. Falling back to alternative model.",
   TOOL_NOT_FOUND: "not found in registry",
   NO_PROMPT_PROVIDED: "Please provide a prompt for analysis. Use @ syntax to include files (e.g., '@largefile.js explain what this does') or ask general questions",
 } as const;
 
 // Status messages
 export const STATUS_MESSAGES = {
-  QUOTA_SWITCHING: "🚫 Gemini 2.5 Pro quota exceeded, switching to Flash model...",
-  FLASH_RETRY: "⚡ Retrying with Gemini 2.5 Flash...",
+  QUOTA_SWITCHING: "🚫 Model quota exceeded, switching to Flash model...",
+  FLASH_RETRY: "⚡ Retrying with Flash model...",
   FLASH_SUCCESS: "✅ Flash model completed successfully",
   SANDBOX_EXECUTING: "🔒 Executing Gemini CLI command in sandbox mode...",
   GEMINI_RESPONSE: "Gemini response:",
@@ -26,8 +26,16 @@ export const STATUS_MESSAGES = {
 
 // Models
 export const MODELS = {
-  PRO: "gemini-2.5-pro",
-  FLASH: "gemini-2.5-flash",
+  // Gemini 3 models (preview)
+  PRO_3: "gemini-3-pro-preview",
+  FLASH_3: "gemini-3-flash-preview",
+  // Gemini 2.5 models (stable)
+  PRO_2_5: "gemini-2.5-pro",
+  FLASH_2_5: "gemini-2.5-flash",
+  // Aliases for default usage
+  PRO: "gemini-3-pro-preview",
+  FLASH: "gemini-3-flash-preview",
+  DEFAULT: "gemini-3-flash-preview",
 } as const;
 
 // MCP Protocol Constants

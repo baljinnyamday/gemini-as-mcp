@@ -8,7 +8,7 @@ import {
 
 const askGeminiArgsSchema = z.object({
   prompt: z.string().min(1).describe("Analysis request. Supports: 1) @ syntax for files/dirs (e.g., '@src/' or '@file.js'), 2) Web search ('search for latest React 19 features'), 3) URL fetching ('summarize https://example.com'), 4) Code execution in sandbox mode, 5) General questions. Gemini automatically uses web_search and web_fetch tools when needed."),
-  model: z.string().optional().describe("Optional model to use (e.g., 'gemini-2.5-flash'). If not specified, uses the default model (gemini-2.5-pro)."),
+  model: z.string().optional().describe("Optional model to use (e.g., 'gemini-3-pro-preview', 'gemini-2.5-pro'). If not specified, uses the default model (gemini-3-flash-preview)."),
   sandbox: z.boolean().default(false).describe("Use sandbox mode (-s flag) to safely test code changes, execute scripts, or run potentially risky operations in an isolated environment"),
   changeMode: z.boolean().default(false).describe("Enable structured change mode - formats prompts to prevent tool errors and returns structured edit suggestions that Claude can apply directly"),
   chunkIndex: z.union([z.number(), z.string()]).optional().describe("Which chunk to return (1-based)"),

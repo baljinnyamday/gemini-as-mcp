@@ -21,16 +21,16 @@ fi
 # Clone the wiki repository
 echo "📥 Cloning wiki repository..."
 rm -rf .wiki-temp
-git clone https://github.com/jamubc/gemini-mcp-tool.wiki.git .wiki-temp 2>/dev/null || {
+git clone https://github.com/baljinnyamday/gemini-as-mcp.wiki.git .wiki-temp 2>/dev/null || {
     echo "⚠️  Wiki doesn't exist yet. Creating it through GitHub..."
     # Create initial wiki page through API
-    gh api repos/jamubc/gemini-mcp-tool/wiki/pages \
+    gh api repos/baljinnyamday/gemini-as-mcp/wiki/pages \
         --method POST \
         -f title="Home" \
         -f body="Initializing wiki..." || true
     
     # Try cloning again
-    git clone https://github.com/jamubc/gemini-mcp-tool.wiki.git .wiki-temp
+    git clone https://github.com/baljinnyamday/gemini-as-mcp.wiki.git .wiki-temp
 }
 
 cd .wiki-temp
@@ -98,18 +98,18 @@ cat > _Sidebar.md << 'EOF'
 ---
 
 **Quick Links**
-* [📦 NPM Package](https://www.npmjs.com/package/gemini-mcp-tool)
-* [🐙 GitHub Repo](https://github.com/jamubc/gemini-mcp-tool)
-* [📋 Report Issue](https://github.com/jamubc/gemini-mcp-tool/issues/new)
+* [📦 NPM Package](https://www.npmjs.com/package/gemini-as-mcp)
+* [🐙 GitHub Repo](https://github.com/baljinnyamday/gemini-as-mcp)
+* [📋 Report Issue](https://github.com/baljinnyamday/gemini-as-mcp/issues/new)
 EOF
 
 # Create footer
 cat > _Footer.md << 'EOF'
 ---
-📄 [MIT License](https://github.com/jamubc/gemini-mcp-tool/blob/main/LICENSE) | 
-🔧 [Contribute](https://github.com/jamubc/gemini-mcp-tool/blob/main/CONTRIBUTING.md) | 
-📦 [NPM](https://www.npmjs.com/package/gemini-mcp-tool) |
-⭐ [Star on GitHub](https://github.com/jamubc/gemini-mcp-tool)
+📄 [MIT License](https://github.com/baljinnyamday/gemini-as-mcp/blob/main/LICENSE) | 
+🔧 [Contribute](https://github.com/baljinnyamday/gemini-as-mcp/blob/main/CONTRIBUTING.md) | 
+📦 [NPM](https://www.npmjs.com/package/gemini-as-mcp) |
+⭐ [Star on GitHub](https://github.com/baljinnyamday/gemini-as-mcp)
 EOF
 
 # Commit and push
@@ -129,6 +129,6 @@ cd ..
 rm -rf .wiki-temp
 
 echo "✅ Wiki deployed successfully!"
-echo "🔗 View at: https://github.com/jamubc/gemini-mcp-tool/wiki"
+echo "🔗 View at: https://github.com/baljinnyamday/gemini-as-mcp/wiki"
 echo ""
 echo "📝 Note: It may take a few seconds for changes to appear on GitHub."

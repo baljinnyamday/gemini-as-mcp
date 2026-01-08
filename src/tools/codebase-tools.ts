@@ -7,7 +7,7 @@ import { ERROR_MESSAGES, STATUS_MESSAGES } from '../constants.js';
 const codebaseAnalysisArgsSchema = z.object({
   paths: z.union([z.string(), z.array(z.string())]).describe("File or directory paths to analyze. Use @ syntax: '@src/', '@package.json', '@./'. Can be single path or array of paths."),
   question: z.string().describe("What you want to know about the codebase (e.g., 'explain the architecture', 'find all API endpoints', 'summarize the auth flow')"),
-  model: z.string().optional().describe("Optional model to use (default: gemini-2.5-pro)"),
+  model: z.string().optional().describe("Optional model to use (default: gemini-3-flash-preview)"),
 });
 
 export const codebaseAnalysisTool: UnifiedTool = {
@@ -65,7 +65,7 @@ const implementationVerificationArgsSchema = z.object({
   paths: z.union([z.string(), z.array(z.string())]).describe("Directories/files to search in. Use @ syntax: '@src/', '@lib/', '@./'. Can be single path or array."),
   feature: z.string().describe("Feature or pattern to check for (e.g., 'JWT authentication', 'dark mode', 'rate limiting', 'WebSocket connections', 'Redis caching')"),
   details: z.string().optional().describe("Optional: Specific aspects to verify (e.g., 'Show me the middleware functions', 'List all endpoints', 'Check error handling')"),
-  model: z.string().optional().describe("Optional model to use (default: gemini-2.5-pro)"),
+  model: z.string().optional().describe("Optional model to use (default: gemini-3-flash-preview)"),
 });
 
 export const implementationVerificationTool: UnifiedTool = {
