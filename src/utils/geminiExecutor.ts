@@ -17,7 +17,8 @@ export async function executeGeminiCLI(
   model?: string,
   sandbox?: boolean,
   changeMode?: boolean,
-  onProgress?: (newOutput: string) => void
+  onProgress?: (newOutput: string) => void,
+  outputFormat?: string
 ): Promise<string> {
   let prompt_processed = prompt;
   
@@ -90,12 +91,14 @@ ${prompt_processed}
   const args = [];
   if (model) { args.push(CLI.FLAGS.MODEL, model); }
   if (sandbox) { args.push(CLI.FLAGS.SANDBOX); }
-  
+  if (outputFormat) { args.push(CLI.FLAGS.OUTPUT_FORMAT, outputFormat); }
+  args.push(CLI.FLAGS.YOLO); // Auto-approve all tool calls
+
   // Ensure @ symbols work cross-platform by wrapping in quotes if needed
-  const finalPrompt = prompt_processed.includes('@') && !prompt_processed.startsWith('"') 
-    ? `"${prompt_processed}"` 
+  const finalPrompt = prompt_processed.includes('@') && !prompt_processed.startsWith('"')
+    ? `"${prompt_processed}"`
     : prompt_processed;
-    
+
   args.push(CLI.FLAGS.PROMPT, finalPrompt);
   
   try {
@@ -110,12 +113,16 @@ ${prompt_processed}
       if (sandbox) {
         fallbackArgs.push(CLI.FLAGS.SANDBOX);
       }
-      
+      if (outputFormat) {
+        fallbackArgs.push(CLI.FLAGS.OUTPUT_FORMAT, outputFormat);
+      }
+      fallbackArgs.push(CLI.FLAGS.YOLO); // Auto-approve all tool calls
+
       // Same @ symbol handling for fallback
-      const fallbackPrompt = prompt_processed.includes('@') && !prompt_processed.startsWith('"') 
-        ? `"${prompt_processed}"` 
+      const fallbackPrompt = prompt_processed.includes('@') && !prompt_processed.startsWith('"')
+        ? `"${prompt_processed}"`
         : prompt_processed;
-        
+
       fallbackArgs.push(CLI.FLAGS.PROMPT, fallbackPrompt);
       try {
         const result = await executeCommand(CLI.COMMANDS.GEMINI, fallbackArgs, onProgress);

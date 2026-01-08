@@ -78,6 +78,14 @@ export const CLI = {
     SANDBOX: "-s",
     PROMPT: "-p",
     HELP: "-help",
+    YOLO: "--yolo",
+    OUTPUT_FORMAT: "--output-format",
+  },
+  // Output format options
+  OUTPUT_FORMATS: {
+    TEXT: "text",      // Default human-readable
+    JSON: "json",      // Structured JSON response
+    STREAM_JSON: "stream-json", // Real-time JSONL events
   },
   // Default values
   DEFAULTS: {
